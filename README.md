@@ -57,6 +57,12 @@ This project was created to practice:
 - data extraction
 - GitHub project management
 
+This project is using using requests to get the raw html of the code
+and pass it using beautifulsoup4
+
+
+An upgrade of it is in the next commit
+
 
 
 
