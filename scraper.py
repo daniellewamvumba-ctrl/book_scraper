@@ -4,10 +4,10 @@ import csv
 
 BASE_URL = "https://books.toscrape.com/catalogue/page-{}.html"
 
-file = open("data/books.csv", "w", newline="", encoding="utf-8")
+file = open("data/updated_books.csv", "w", newline="", encoding="utf-8")
 writer = csv.writer(file)
 
-writer.writerow(["Title", "Price", "Rating"])
+writer.writerow(["Title", "Price", "Rating","Link","Image Link","Availability"])
 
 for page in range(1, 51):
 
@@ -26,8 +26,11 @@ for page in range(1, 51):
         title = book.h3.a["title"]
         price = book.find("p", class_="price_color").text
         rating = book.find("p", class_="star-rating")["class"][1]
+        link=book.h3.a["href"]
+        image_link=book.find("img")["src"]
+        availability=book.find("p", class_="availability").text.strip()
 
-        writer.writerow([title, price, rating])
+        writer.writerow([title, price, rating, link, image_link, availability])
 
 file.close()
 
