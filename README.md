@@ -63,6 +63,9 @@ and pass it using beautifulsoup4
 
 An upgrade of it is in the next commit
 
+All the details of the product are added remaining descriptions in the next commit
+
+
 
 
 
